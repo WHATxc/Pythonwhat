@@ -1,0 +1,19 @@
+sudo: false
+language: python
+python:
+- '3.5'
+before_install:
+- pip install -r requirements.txt
+- pip install -e .
+script: pytest -m "not compiled" --cov=pythonwhat
+after_success: codecov --token=$CODECOV_TOKEN
+deploy:
+  provider: pypi
+  user: datacamp
+  password:
+    secure: g0lu0u/tDLNxPa0VsmPQhRfPUzA+3EavKljX9goinCbp0o6RWY7LSBEwCqmMcqIlVJ7gL2yMkBC21HsEGkIvkJhoTpWFXVWtbZEUcmyrfviu1HCrOUqsLvy9WOd+h8ZVelsPT4PEuEKtXD8K9qMjRjtiWH9xuoG+LyMPWvO2WGuIxk+z7DNIrPNm48kuC97yKKr2NWXoj9MjhfqPNAizqAiolYdLBwQX/biXQqsGNErSWp1rvojeA27PrtROLFHZO3cni7b3QjmpmaDkAYERfSbfUfom1gcAKQNeM3OfecBVxNsFc8kjhriktQyp9pWGZ44Hn9dmeYVeGfmVOEmIlCppLlQYcRm07QBtOpgN/QqOftAgZBKbd0AXftrxu64G//l9fLXGaW7i9vsqUMc7ttD4FKF5c7Du4+v3i5ouRXnnaMf2bER/FwezPn5tBrAJ2jW96CDYCnUzQzve/NRmjMUSJbNM4YAB5apXq1PyeacLUEPWphZBcurZe0/Gy3ERTDFTMpHC1fS6ciIDnzMLl69HDuCwOfT7Spvj0hjUgDPR650l66rbEG5UHDmymK2r+qsNrmSicahmKOUT8NJ478qP68G1eNemqe2iT6m8dTvMGD5vSqSgPLwrbfX/ECLk4Gx39Xn+Guj1o/TYF8MTMy/CxXIdXXx9P2Z9/4X5Xso=
+  on:
+    tags: true
+    distributions: sdist bdist_wheel
+    repo: datacamp/pythonwhat
+  skip_upload_docs: true
