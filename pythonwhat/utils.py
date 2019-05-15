@@ -20,16 +20,16 @@ def shorten_str(text, to_chars=100):
 def get_ord(num):
     assert num != 0, "use strictly positive numbers in get_ord()"
     nums = {
-        1: "first",
-        2: "second",
-        3: "third",
-        4: "fourth",
-        5: "fifth",
-        6: "sixth",
-        7: "seventh",
-        8: "eight",
-        9: "nineth",
-        10: "tenth",
+        1: "第一",
+        2: "第二",
+        3: "第三",
+        4: "第四",
+        5: "第五",
+        6: "第六",
+        7: "第七",
+        8: "第八",
+        9: "第九",
+        10: "第十",
     }
     if num in nums:
         return nums[num]
@@ -38,7 +38,7 @@ def get_ord(num):
 
 
 def get_times(num):
-    nums = {1: "once", 2: "twice"}
+    nums = {1: "一次", 2: "两次"}
     if num in nums:
         return nums[num]
     else:
