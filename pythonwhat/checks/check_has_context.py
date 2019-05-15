@@ -5,8 +5,8 @@ from pythonwhat.State import State
 from functools import singledispatch
 from pythonwhat.checks.check_funcs import check_part_index
 
-MSG_INCORRECT_LOOP = "Have you used the correct iterator variable names? Was expecting `{{sol_vars}}` but got `{{stu_vars}}`."
-MSG_INCORRECT_WITH = "Make sure to use the correct context variable names. Was expecting `{{sol_vars}}` but got `{{stu_vars}}`."
+MSG_INCORRECT_LOOP = "您是否使用了正确的迭代器变量名? 期待 `{{sol_vars}}` 但得到 `{{stu_vars}}`."
+MSG_INCORRECT_WITH = "确保使用正确的上下文变量名称. 期待 `{{sol_vars}}` 但得到 `{{stu_vars}}`."
 
 
 def has_context(state, incorrect_msg=None, exact_names=False):

@@ -658,7 +658,7 @@ def has_printout(
 
     if not_printed_msg is None:
         not_printed_msg = (
-            "Have you used `{{sol_call}}` to do the appropriate printouts?"
+            "你是否有使用 `{{sol_call}}` 来执行恰当的打印输出?"
         )
 
     try:

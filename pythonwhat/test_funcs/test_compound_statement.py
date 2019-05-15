@@ -558,8 +558,8 @@ def test_comp(
     rep=None,
 ):
 
-    MSG_INCORRECT_ITER_VARS = "Have you used the correct iterator variables?"
-    MSG_INCORRECT_NUM_ITER_VARS = "Have you used {{num_vars}} iterator variables?"
+    MSG_INCORRECT_ITER_VARS = "您是否使用了正确的迭代器（iterator）变量?"
+    MSG_INCORRECT_NUM_ITER_VARS = "你是否使用了{{num_vars}}迭代器变量（iterator variables）?"
     MSG_INSUFFICIENT_IFS = "Have you used {{sol_len}} ifs?"
 
     # make sure other messages are set to default if None
