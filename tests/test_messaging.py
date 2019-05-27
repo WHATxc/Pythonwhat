@@ -24,25 +24,25 @@ def lines(output, s, e):
         ("", "Did you call `round()`?", None, None),
         (
             "round(1)",
-            "Check your call of `round()`. Did you specify the second argument?",
+            "检查你的 `round()`的调用. 你指定第二个参数了吗?",
             1,
             8,
         ),
         (
             "round(1, a)",
-            "Check your call of `round()`. Did you correctly specify the second argument? Running it generated an error: `name 'a' is not defined`.",
+            "检查你的 `round()`的调用. 您是否正确地指定了第二个参数? 运行它会产生一个错误: `name 'a' is not defined`.",
             10,
             10,
         ),
         (
             "round(1, 2)",
-            "Check your call of `round()`. Did you correctly specify the second argument? Expected `3`, but got `2`.",
+            "检查你的 `round()`的调用. 您是否正确地指定了第二个参数? 期望的是 `3`, 但现在却得到 `2`.",
             10,
             10,
         ),
         (
             "round(1, ndigits = 2)",
-            "Check your call of `round()`. Did you correctly specify the second argument? Expected `3`, but got `2`.",
+            "检查你的 `round()`的调用. 您是否正确地指定了第二个参数? 期望的是 `3`, 但现在却得到 `2`.",
             10,
             20,
         ),
@@ -66,19 +66,19 @@ def test_check_function_pos(stu, patt, cols, cole):
     [
         (
             "round(1)",
-            "Check your call of `round()`. Did you specify the argument `ndigits`?",
+            "检查你的 `round()`的调用. 您是否指定了参数 `ndigits`?",
             1,
             8,
         ),
         (
             "round(1, a)",
-            "Check your call of `round()`. Did you correctly specify the argument `ndigits`? Running it generated an error: `name 'a' is not defined`.",
+            "检查你的 `round()`的调用. 您是否正确地指定了参数 `ndigits`? 运行它会产生一个错误: `name 'a' is not defined`.",
             10,
             10,
         ),
         (
             "round(1, 2)",
-            "Check your call of `round()`. Did you correctly specify the argument `ndigits`? Expected `3`, but got `2`.",
+            "检查你的 `round()`的调用. 您是否正确地指定了参数 `ndigits`? 期望的是 `3`, 但现在却得到 `2`.",
             10,
             10,
         ),
@@ -102,13 +102,13 @@ def test_check_function_named(stu, patt, cols, cole):
     [
         (
             "round(3)",
-            "Check your call of `round()`. Did you correctly specify the first argument? Expected `2`, but got `3`.",
+            "检查你的 `round()`的调用. 您是否正确地指定了第一个参数? 期望的是 `2`, 但现在却得到 `3`.",
             7,
             7,
         ),
         (
             "round(1 + 1)",
-            "Check your call of `round()`. Did you correctly specify the first argument? Expected `2`, but got `1 + 1`.",
+            "检查你的 `round()`的调用. 您是否正确地指定了第一个参数? 期望的是 `2`, 但现在却得到 `1 + 1`.",
             7,
             11,
         ),
@@ -132,13 +132,13 @@ def test_check_function_ast(stu, patt, cols, cole):
     [
         (
             'list("wrong")',
-            'Check your call of `list()`. Did you correctly specify the first argument? Expected `"test"`, but got `"wrong"`.',
+            '检查你的 `list()`的调用. 您是否正确地指定了第一个参数? 期望的是 `"test"`, 但现在却得到 `"wrong"`.',
             6,
             12,
         ),
         (
             'list("te" + "st")',
-            'Check your call of `list()`. Did you correctly specify the first argument? Expected `"test"`, but got `"te" + "st"`.',
+            '检查你的 `list()`的调用. 您是否正确地指定了第一个参数? 期望的是 `"test"`, 但现在却得到 `"te" + "st"`.',
             6,
             16,
         ),
@@ -162,13 +162,13 @@ def test_check_function_ast2(stu, patt, cols, cole):
     [
         (
             "round(a)",
-            "Check your call of `round()`. Did you correctly specify the first argument? Expected `b`, but got `a`.",
+            "检查你的 `round()`的调用. 您是否正确地指定了第一个参数? 期望的是 `b`, 但现在却得到 `a`.",
             7,
             7,
         ),
         (
             "round(b + 1 - 1)",
-            "Check your call of `round()`. Did you correctly specify the first argument? Expected `b`, but got `b + 1 - 1`.",
+            "检查你的 `round()`的调用. 您是否正确地指定了第一个参数? 期望的是 `b`, 但现在却得到 `b + 1 - 1`.",
             7,
             15,
         ),
@@ -229,16 +229,16 @@ def test_check_function_pkg2(stu, patt):
 @pytest.mark.parametrize(
     "stu, patt",
     [
-        ("", "Did you call `round()`?"),
-        ("round(1)", "Did you call `round()` twice?"),
+        ("", "你有调用 `round()`吗?"),
+        ("round(1)", "你有调用 `round()` 两次吗?"),
         (
             "round(1)\nround(5)",
-            "Check your second call of `round()`. Did you correctly specify the first argument? Expected `2`, but got `5`.",
+            "检查 `round()`的第二次调用. 您是否正确地指定了第一个参数? 期望的是 `2`, 但现在却得到 `5`.",
         ),
-        ("round(1)\nround(2)", "Did you call `round()` three times?"),
+        ("round(1)\nround(2)", "你有调用 `round()` 三次吗?"),
         (
             "round(1)\nround(2)\nround(5)",
-            "Check your third call of `round()`. Did you correctly specify the first argument? Expected `3`, but got `5`.",
+            "检查 `round()`的第三次调用. 您是否正确地指定了第一个参数? 期望的是 `3`, 但现在却得到 `5`.",
         ),
     ],
 )
@@ -259,19 +259,19 @@ def test_multiple_check_functions(stu, patt):
     [
         (
             "df.groupby('a')",
-            "Check your call of `df.groupby()`. Did you correctly specify the first argument? Expected `'b'`, but got `'a'`.",
+            "检查你的 `df.groupby()的调用`. 您是否正确地指定了第一个参数? 期望的是 `'b'`, 但现在却得到 `'a'`.",
             12,
             14,
         ),
         (
             "df.groupby('b').a.value_counts()",
-            "Check your call of `df.groupby.a.value_counts()`. Did you specify the argument `normalize`?",
+            "检查你的 `df.groupby.a.value_counts()`的调用. 您是否指定了参数 `normalize`?",
             1,
             32,
         ),
         (
             "df[df.b == 'x'].groupby('b').a.value_counts()",
-            "Check your call of `df.groupby.a.value_counts()`. Did you specify the argument `normalize`?",
+            "检查你的 `df.groupby.a.value_counts()`的调用. 您是否指定了参数 `normalize`?",
             1,
             45,
         ),
@@ -302,10 +302,10 @@ Ex().check_function('df.groupby.a.value_counts', signature = sig_from_obj(pd.Ser
 @pytest.mark.parametrize(
     "stu, patt, cols, cole",
     [
-        ("", "Did you define the variable `x` without errors?", None, None),
+        ("", "你是否正确无误地定义了变量 `x` ?", None, None),
         (
             "x = 2",
-            "Did you correctly define the variable `x`? Expected `5`, but got `2`.",
+            "你是否正确地定义了变量 `x`? 期望的是 `5`, 但现在却得到 `2`.",
             1,
             5,
         ),
@@ -336,25 +336,25 @@ def test_check_object(stu, patt, cols, cole):
     [
         (
             "df = 3",
-            "Did you correctly define the pandas DataFrame `df`? Is it a DataFrame?",
+            "您是否正确定义了panda DataFrame `df`? 它是一个 DataFrame吗?",
             1,
             6,
         ),
         (
             'df = pd.DataFrame({"b": [1]})',
-            "Did you correctly define the pandas DataFrame `df`? There is no column `'a'`.",
+            "您是否正确定义了panda DataFrame `df`? 没有列 `'a'`.",
             1,
             29,
         ),
         (
             'df = pd.DataFrame({"a": [1]})',
-            "Did you correctly define the pandas DataFrame `df`? Did you correctly set the column `'a'`? Expected something different.",
+            "您是否正确定义了panda DataFrame `df`? 你是否正确设置了列 `'a'`? 期望得到一些不同的东西.",
             1,
             29,
         ),
         (
             'y = 3; df = pd.DataFrame({"a": [1]})',
-            "Did you correctly define the pandas DataFrame `df`? Did you correctly set the column `'a'`? Expected something different.",
+            "您是否正确定义了panda DataFrame `df`? 你是否正确设置了列 `'a'`? 期望得到一些不同的东西.",
             8,
             36,
         ),
@@ -379,25 +379,25 @@ def test_test_data_frame_no_msg(sct, stu, patt, cols, cole):
     [
         (
             "x = {}",
-            "Did you correctly define the variable `x`? There is no key `'a'`.",
+            "你是否正确地定义了变量 `x`? 没有 key `'a'`.",
             1,
             6,
         ),
         (
             'x = {"b": 3}',
-            "Did you correctly define the variable `x`? There is no key `'a'`.",
+            "你是否正确地定义了变量 `x`? 没有 key `'a'`.",
             1,
             12,
         ),
         (
             'x = {"a": 3}',
-            "Did you correctly define the variable `x`? Did you correctly set the key `'a'`? Expected `2`, but got `3`.",
+            "您是否正确地定义了变量 `x`? 你是否正确设置了key `'a'`? 期望的是 `2`, 但现在却得到了 `3`.",
             1,
             12,
         ),
         (
             'y = 3; x = {"a": 3}',
-            "Did you correctly define the variable `x`? Did you correctly set the key `'a'`? Expected `2`, but got `3`.",
+            "您是否正确地定义了变量 `x`? 你是否正确设置了key `'a'`? 期望的是 `2`, 但现在却得到了 `3`.",
             8,
             19,
         ),
@@ -447,19 +447,19 @@ Ex().check_object('x', missing_msg='objectnotdefined').has_equal_value('objectin
     [
         (
             "",
-            "The system wants to check the definition of `test()` but hasn't found it.",
+            "系统想要检查`test()`的定义，但是没有找到它。",
         ),
         (
             "def test(b): return b",
-            "Check the definition of `test()`. Did you specify the argument `a`?",
+            "检查 `test()`的定义.你指定参数 `a`了吗?",
         ),
         (
             "def test(a): return a",
-            "Check the definition of `test()`. Did you correctly specify the argument `a`? not default",
+            "检查 `test()`的定义. 您是否正确地指定了参数 `a`? 而不是默认的",
         ),
         (
             "def test(a = 2): return a",
-            "Check the definition of `test()`. Did you correctly specify the argument `a`? Expected `1`, but got `2`.",
+            "检查 `test()`的定义. 您是否正确地指定了参数 `a`? 期望的是 `1`, 但得到 `2`.",
         ),
     ],
 )
@@ -556,27 +556,27 @@ def test_check_call_lambda(stu, patt):
     [
         (
             "",
-            "The system wants to check the class definition of `A` but hasn't found it.",
+            "系统想要检查`A`的类定义，但是没有找到它。",
         ),
         (
             "def A(x): pass",
-            "The system wants to check the class definition of `A` but hasn't found it.",
+            "系统想要检查`A`的类定义，但是没有找到它。",
         ),
         (
             "class A(): pass",
-            "Check the class definition of `A`. Are you sure you defined the first base class?",
+            "检查`A`的类定义. 您确定定义了第一个基类（base class）吗?",
         ),
         (
             "class A(int): pass",
-            "Check the class definition of `A`. Did you correctly specify the first base class? Expected `str`, but got `int`.",
+            "检查`A`的类定义. 您是否正确地指定了第一个基类? 期望的是 `str`, 但现在得到 `int`.",
         ),
         (
             "class A(str):\n  def __not_init__(self): pass",
-            "Check the class definition of `A`. Did you correctly specify the body? The system wants to check the definition of `__init__()` but hasn't found it.",
+            "检查`A`的类定义 . 您是否正确地指定了主体 (body)? 系统想要检查`__init__()`的定义，但是没有找到它。",
         ),
         (
             "class A(str):\n  def __init__(self): print(1)",
-            "Check the definition of `__init__()`. Did you correctly specify the body? Expected `pass`, but got `print(1)`.",
+            "检查 `__init__()`的定义. 您是否正确地指定了主体 (body)? 期望的是 `pass`, 但现在却得到 `print(1)`.",
         ),
     ],
 )
@@ -599,9 +599,9 @@ def test_check_class_def_pass(stu, patt):
 @pytest.mark.parametrize(
     "stu, patt",
     [
-        ("", "Did you import `pandas`?"),
-        ("import pandas", "Did you import `pandas` as `pd`?"),
-        ("import pandas as pan", "Did you import `pandas` as `pd`?"),
+        ("", "你有导入 `pandas`吗?"),
+        ("import pandas", "你有将 `pandas` 导入为 `pd`吗?"),
+        ("import pandas as pd", "你有将 `pandas` 导入为 `pd`吗?"),
     ],
 )
 def test_has_import(stu, patt):
@@ -640,13 +640,13 @@ def test_has_import_custom(stu, patt):
     [
         (
             "my_dict = {'a': 1, 'b': 2}\nfor key, value in my_dict.items(): x = key + ' -- ' + str(value)",
-            "Check the first for loop. Did you correctly specify the body? Are you sure you assigned the correct value to `x`?",
+            "检查第一个for循环. 您是否正确地指定了主体 (body)? 你确定对 `x`进行了正确的赋值吗?",
             36,
             64,
         ),
         (
             "my_dict = {'a': 1, 'b': 2}\nfor key, value in my_dict.items(): x = key + ' - ' + str(value)",
-            "Check the first for loop. Did you correctly specify the body? Expected the output `a - 1`, but got `no printouts`.",
+            "检查第一个for循环. 您是否正确地指定了主体 (body)? 期望的输出是 `a - 1`, 但现在却得到 `no printouts`.",
             36,
             63,
         ),
@@ -670,13 +670,13 @@ def test_has_equal_x(stu, patt, cols, cole):
     [
         (
             "result = (num for num in range(3))",
-            "Check the first generator expression. Did you correctly specify the iterable part? Expected `range(0, 31)`, but got `range(0, 3)`.",
+            "检查第一个生成器表达式(generator expressions). 您是否正确地指定了可迭代部分? 期望的是 `range(0, 31)`, 但现在却得到 `range(0, 3)`.",
             26,
             33,
         ),
         (
             "result = (num*2 for num in range(31))",
-            "Check the first generator expression. Did you correctly specify the body? Expected `4`, but got `8`.",
+            "检查第一个生成器表达式(generator expressions). 您是否正确地指定了主体 (body)? 期望的是 `4`, 但现在却得到 `8`.",
             11,
             15,
         ),
@@ -705,7 +705,7 @@ def test_has_no_error():
     assert not output["correct"]
     assert message(
         output,
-        "Have a look at the console: your code contains an error. Fix it and try again!",
+        "查看控制台:您的代码有一个错误。修正它，然后再试一次!",
     )
 
 
@@ -715,25 +715,25 @@ def test_has_no_error():
 @pytest.mark.parametrize(
     "stu, patt",
     [
-        ("", "Did you define the variable `a` without errors?"),
-        ("a = 1", "Did you define the variable `b` without errors?"),
+        ("", "你是否正确无误地定义了变量 `a`?"),
+        ("a = 1", "你是否正确无误地定义了变量 `b` ?"),
         ("a = 1; b = a + 1", "Did you define the variable `c` without errors?"),
         (
             "a = 1; b = a + 1; c = b + 1",
-            "Have you used `print(c)` to do the appropriate printouts?",
+            "你有否使用 `print(c)` 来执行适当的打印输出?",
         ),
-        ("print(4)", "Did you define the variable `a` without errors?"),
+        ("print(4)", "你是否正确无误地定义了变量 `a` ?"),
         (
             "c = 3; print(c + 1)",
-            "Have you used `print(c)` to do the appropriate printouts?",
+            "你有否使用 `print(c)` 来执行适当的打印输出?",
         ),
         (
             "b = 3; c = b + 1; print(c)",
-            "Did you define the variable `a` without errors?",
+            "您是否正确无误地定义了变量 `a` ?",
         ),
         (
             "a = 2; b = a + 1; c = b + 1",
-            "Did you correctly define the variable `a`? Expected `1`, but got `2`.",
+            "您是否正确地定义了变量 `a`? 期望的是 `1`, 但现在却得到 `2`.",
         ),
     ],
 )
@@ -768,11 +768,11 @@ Ex().test_correct(
     [
         (
             "Ex().check_for_loop().check_body().check_for_loop().check_body().has_equal_output()",
-            "Check the first for loop. Did you correctly specify the body? Expected the output `1+1`, but got `1-1`.",
+            "检查第一个for循环. 您是否正确地指定了主体(body)? 期望的输出是 `1+1`, 但现在却得到 `1-1`.",
         ),
         (
             "Ex().check_for_loop().check_body().check_for_loop().disable_highlighting().check_body().has_equal_output()",
-            "Check the first for loop. Did you correctly specify the body? Check the first for loop. Did you correctly specify the body? Expected the output `1+1`, but got `1-1`.",
+            "检查第一个for循环. 您是否正确地指定了主体(body)? 检查第一个for循环. 您是否正确地指定了主体(body)? 期望的输出是 `1+1`, 但现在却得到 `1-1`.",
         ),
     ],
 )
@@ -797,11 +797,11 @@ for i in range(2):
     [
         (
             "Ex().check_object('x').has_equal_value()",
-            "Did you correctly define the variable `x`? Expected `[1]`, but got `[0]`.",
+            "你是否正确地定义了变量 `x`? 期望的是 `[1]`, 但现在却得到 `[0]`.",
         ),
         (
             "Ex().has_equal_value(name = 'x')",
-            "Are you sure you assigned the correct value to `x`?",
+            "你确定你给 `x`正确的赋值了吗?",
         ),
         (
             "Ex().has_equal_value(expr_code = 'x[0]')",
@@ -828,22 +828,22 @@ def test_has_expr(sct, patt):
         ),
         (
             "if offset > 10: x = 5\nelse: x = round(2.123)",
-            "Check the first if statement. Did you correctly specify the condition? Expected <code>True</code>, but got <code>False</code>.",
+            "检查第一个if语句. 您是否正确地指定了条件 (condition)? 期望的是 <code>True</code>, 但现在却得到 <code>False</code>.",
             [1, 1, 4, 14],
         ),
         (
             "if offset > 8: x = 7\nelse: x = round(2.123)",
-            "Check the first if statement. Did you correctly specify the body? Could not find the correct pattern in your code.",
+            "检查第一个if语句. 您是否正确地指定了主体(body)? 无法在代码中找到正确的模式.",
             [1, 1, 16, 20],
         ),
         (
             "if offset > 8: x = 5\nelse: x = 8",
-            "Check the first if statement. Did you correctly specify the else part? Did you call <code>round()</code>?",
+            "检查第一个if语句. 您是否正确地指定了else部分? 你是否调用了 <code>round()</code>?",
             [2, 2, 7, 11],
         ),
         (
             "if offset > 8: x = 5\nelse: x = round(2.2121314)",
-            "Check your call of <code>round()</code>. Did you correctly specify the first argument? Expected <code>2.123</code>, but got <code>2.2121314</code>.",
+            "检查你对 <code>round()</code>的调用. 您是否正确地指定了第一个参数? 期望的是 <code>2.123</code>, 但现在却得到了 <code>2.2121314</code>.",
             [2, 2, 17, 25],
         ),
     ],
@@ -876,7 +876,7 @@ Ex().check_if_else().multi(
     "msgpart",
     [
         "__JINJA__:You did {{stu_eval}}, but should be {{sol_eval}}!",
-        "You did {{stu_eval}}, but should be {{sol_eval}}!",
+        "你做了 {{stu_eval}}, 但应该是 {{sol_eval}}!",
     ],
 )
 def test_jinja_in_custom_msg(msgpart):
@@ -889,4 +889,4 @@ def test_jinja_in_custom_msg(msgpart):
         }
     )
     assert not output["correct"]
-    assert message(output, "You did 3, but should be 4!")
+    assert message(output, "你做了3次，但应该是4次!")

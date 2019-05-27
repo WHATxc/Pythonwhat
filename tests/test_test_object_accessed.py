@@ -11,7 +11,7 @@ import tests.helper as helper
         (
             'test_object_accessed("arr", times=3)',
             False,
-            "Have you accessed <code>arr</code> at least three times?",
+            "你有访问 <code>arr</code> 至少三次吗?",
         ),
         (
             'test_object_accessed("arr", times=3, not_accessed_msg="silly")',
@@ -22,7 +22,7 @@ import tests.helper as helper
         (
             'test_object_accessed("arr.shape", times=2)',
             False,
-            "Have you accessed <code>arr.shape</code> at least twice?",
+            "你有访问 <code>arr.shape</code> 至少两次吗?",
         ),
         (
             'test_object_accessed("arr.shape", times=2, not_accessed_msg="silly")',
@@ -32,14 +32,14 @@ import tests.helper as helper
         (
             'test_object_accessed("arr.dtype")',
             False,
-            "Have you accessed <code>arr.dtype</code>?",
+            "你有访问 <code>arr.dtype</code>吗?",
         ),
         ('test_object_accessed("arr.dtype", not_accessed_msg="silly")', False, "silly"),
         ('test_object_accessed("math.e")', True, None),
         (
             'test_object_accessed("math.pi")',
             False,
-            "Have you accessed <code>m.pi</code>?",
+            "你有访问 <code>m.pi</code>吗?",
         ),
         ('test_object_accessed("math.pi", not_accessed_msg="silly")', False, "silly"),
     ],

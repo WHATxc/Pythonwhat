@@ -8,7 +8,7 @@ import tests.helper as helper
         (
             "test_with(1, body = lambda: [test_function('print', index = i + 1) for i in range(3)])",
             False,
-            "Check your third call of <code>print()</code>. Did you correctly specify the first argument? Expected something different.",
+            "检查你对 <code>print()</code>的第三次调用. 您是否正确地指定了第一个参数? 期待一些不一样的东西.",
             [6, 6, 11, 16],
         ),
         (
@@ -41,7 +41,7 @@ Ex().check_with(1).check_body().with_context(for_test)
         (
             "Ex().check_with(0).check_body().with_context([test_function('print', index = i+1) for i in range(3)])",
             False,
-            "Check your third call of <code>print()</code>",
+            "检查你对 <code>print()</code>的第三次调用",
             [6, 6, 11, 16],
         ),
         (
@@ -110,13 +110,13 @@ with open('moby_dick.txt') as file:
         (
             "test_with(1, context_vals=True)",
             False,
-            "Check the first <code>with</code> statement. Make sure to use the correct number of context variables. It seems you defined too many.",
+            "检查第一个 <code>with</code> 语句. 确保使用正确数量的环境变量. 看来你定义得太多了.",
             [3, 6, 1, 17],
         ),
         (
             "test_with(2, context_vals=True)",
             False,
-            "Check the second <code>with</code> statement. Did you correctly specify the first context? Make sure to use the correct context variable names. Was expecting <code>file</code> but got <code>not_file</code>.",
+            "检查你的第二个 <code>with</code> 语句. 您是否正确地指定了第一个环境 (context)? 确保使用正确的环境变量名. 期望的结果是 <code>file</code> 但现在却得到 <code>not_file</code>.",
             [12, 15, 1, 22],
         ),
     ],
@@ -180,7 +180,7 @@ test_with(1, context_tests=[
     lambda: test_function('open')])
         """,
             False,
-            "Check the first <code>with</code> statement. Make sure to use the correct number of context variables. It seems you defined too little.",
+            "检查你的第一个 <code>with</code> 语句. 确保使用正确数量的上下文变量. 你的定义似乎太少了.",
             [3, 6, 1, 17],
         ),
         (
@@ -190,7 +190,7 @@ test_with(2, context_tests=[
     lambda: test_function('open')])
         """,
             False,
-            "Check your call of <code>open()</code>.",
+            "检查你的 <code>open()</code>调用.",
             [12, 12, 46, 60],
         ),
     ],

@@ -44,7 +44,7 @@ def test_normal_error():
     }
     output = helper.run(data)
     assert not output["correct"]
-    assert "Your code generated an error." in output["message"]
+    assert "您的代码产生了一个错误." in output["message"]
 
 
 def test_syntax_error():
@@ -56,7 +56,7 @@ def test_syntax_error():
     }
     output = helper.run(data)
     assert not output["correct"]
-    assert "Your code can not be executed due to a syntax error" in output["message"]
+    assert "由于语法错误，您的代码无法执行" in output["message"]
 
 
 def test_indentation_error():
@@ -69,7 +69,7 @@ def test_indentation_error():
     output = helper.run(data)
     assert not output["correct"]
     assert (
-        "Your code could not be parsed due to an error in the indentation"
+        "由于缩进错误，无法解析代码"
         in output["message"]
     )
 
