@@ -60,7 +60,7 @@ except TypeError as e:
     assert not sct_payload["correct"]
     assert (
         sct_payload["message"]
-        == "Check the first try statement. Did you correctly specify the <code>TypeError</code> <code>except</code> block? Are you sure you assigned the correct value to <code>x</code>?"
+        == "检查第一个try语句. 您是否正确地指定了 <code>TypeError</code> <code>except</code> 代码块? 你确定你给 <code>x</code>正确赋值了吗?"
     )
 
 
@@ -77,7 +77,7 @@ except TypeError as e:
     assert not sct_payload["correct"]
     assert (
         sct_payload["message"]
-        == "Check the first try statement. Are you sure you defined the <code>ValueError</code> <code>except</code> block?"
+        == "检查第一个try语句. 你确定你定义了 <code>ValueError</code> <code>except</code> 代码块吗?"
     )
 
 
@@ -96,7 +96,7 @@ except ValueError:
     assert not sct_payload["correct"]
     assert (
         sct_payload["message"]
-        == "Check the first try statement. Did you correctly specify the <code>ValueError</code> <code>except</code> block? Are you sure you assigned the correct value to <code>x</code>?"
+        == "检查第一个try语句. 您是否正确地指定了 <code>ValueError</code> <code>except</code> 代码块? 你确定给 <code>x</code>正确赋值了吗?"
     )
 
 
@@ -115,7 +115,7 @@ except ValueError:
     assert not sct_payload["correct"]
     assert (
         sct_payload["message"]
-        == "Check the first try statement. Are you sure you defined the <code>ZeroDivisionError</code> <code>except</code> block?"
+        == "检查第一个try语句. 你确定你定义了 <code>ZeroDivisionError</code> <code>except</code> 代码块吗?"
     )
 
 
@@ -136,7 +136,7 @@ except ZeroDivisionError as e:
     assert not sct_payload["correct"]
     assert (
         sct_payload["message"]
-        == "Check the first try statement. Did you correctly specify the <code>ZeroDivisionError</code> <code>except</code> block? Are you sure you assigned the correct value to <code>x</code>?"
+        == "检查第一个try语句. 您是否正确地指定了 <code>ZeroDivisionError</code> <code>except</code> 代码块? 你确定你给 <code>x</code>正确赋值了吗?"
     )
 
 
@@ -157,7 +157,7 @@ except ZeroDivisionError as e:
     assert not sct_payload["correct"]
     assert (
         sct_payload["message"]
-        == "Check the first try statement. Are you sure you defined the <code>IOError</code> <code>except</code> block?"
+        == "检查第一个try语句. 你确定你定义了 <code>IOError</code> <code>except</code> 代码块吗?"
     )
 
 
@@ -178,7 +178,7 @@ except (ZeroDivisionError, IOError) as e:
     assert not sct_payload["correct"]
     assert (
         sct_payload["message"]
-        == "Check the first try statement. Did you correctly specify the <code>ZeroDivisionError</code> <code>except</code> block? Are you sure you assigned the correct value to <code>x</code>?"
+        == "检查第一个try语句. 您是否正确地指定了 <code>ZeroDivisionError</code> <code>except</code> 代码块? 你确定你给 <code>x</code>正确赋值了吗?"
     )
 
 
@@ -199,7 +199,7 @@ except (ZeroDivisionError, IOError) as e:
     assert not sct_payload["correct"]
     assert (
         sct_payload["message"]
-        == "Check the first try statement. Are you sure you defined the <code>all</code> <code>except</code> block?"
+        == "检查第一个try语句. 你确定你定义了 <code>all</code> <code>except</code> 代码块吗?"
     )
 
 
@@ -222,7 +222,7 @@ except :
     assert not sct_payload["correct"]
     assert (
         sct_payload["message"]
-        == "Check the first try statement. Did you correctly specify the <code>all</code> <code>except</code> block? Are you sure you assigned the correct value to <code>x</code>?"
+        == "检查第一个try语句. 你是否正确指定了 <code>all</code> <code>except</code> 代码块? 你确定你给 <code>x</code>正确赋值了吗?"
     )
 
 
@@ -245,7 +245,7 @@ except :
     assert not sct_payload["correct"]
     assert (
         sct_payload["message"]
-        == "Check the first try statement. Are you sure you defined the else part?"
+        == "检查第一个try语句. 您确定您定义了else部分吗?"
     )
 
 
@@ -270,7 +270,7 @@ else :
     assert not sct_payload["correct"]
     assert (
         sct_payload["message"]
-        == "Check the first try statement. Did you correctly specify the else part? Are you sure you assigned the correct value to <code>passed</code>?"
+        == "检查第一个try语句. 您是否正确地指定了else部分? 你确定你为 <code>passed</code>正确赋值了吗?"
     )
 
 
@@ -295,7 +295,7 @@ else :
     assert not sct_payload["correct"]
     assert (
         sct_payload["message"]
-        == "Check the first try statement. Are you sure you defined the finally part?"
+        == "检查第一个try语句. 您确定您定义了finally部分吗?"
     )
 
 
