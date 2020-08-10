@@ -47,7 +47,7 @@ def _test(state, incorrect_msg, exact_names, tv_name, highlight_name):
 @singledispatch
 def _has_context(state, incorrect_msg, exact_names):
     raise InstructorError(
-        "first argument to _has_context must be a State instance or subclass"
+        "_has_context的第一个参数必须是状态实例或子类（State instance or subclass）"
     )
 
 

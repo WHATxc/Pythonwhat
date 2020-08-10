@@ -34,7 +34,7 @@ MISSING_MSG = "你是否调用了 `{{mapped_name}}()`{{' ' + times if index>0}}?
 SIG_ISSUE_MSG = (
     "你是否使用了正确的语法为 `{{mapped_name}}()` 指定了正确的参数?"
 )
-PREPEND_MSG = "Check your {{ord + ' ' if index>0}}call of `{{mapped_name}}()`. "
+PREPEND_MSG = "检查你 {{ord + ' ' if index>0}}调用 `{{mapped_name}}()`. "
 
 
 def check_function(

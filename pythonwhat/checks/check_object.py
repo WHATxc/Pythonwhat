@@ -160,7 +160,7 @@ def check_object(
 
     # Only do the assertion if PYTHONWHAT_V2_ONLY is set to '1'
     if v2_only():
-        extra_msg = "If you want to check the value of an object in e.g. a for loop, use `has_equal_value(name = 'my_obj')` instead."
+        extra_msg = "如果你想检查一个对象的值，例如for循环, 使用 `has_equal_value(name = 'my_obj')` 代替."
         state.assert_root("check_object", extra_msg=extra_msg)
 
     if missing_msg is None:

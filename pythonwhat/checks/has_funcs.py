@@ -200,15 +200,15 @@ def has_equal_ast(state, incorrect_msg=None, code=None, exact=True, append=None)
     return state
 
 
-DEFAULT_INCORRECT_MSG = "Expected {{test_desc}}`{{sol_eval}}`, but got `{{stu_eval}}`."
+DEFAULT_INCORRECT_MSG = "期望的是 {{test_desc}}`{{sol_eval}}`, 但得到 `{{stu_eval}}`."
 DEFAULT_ERROR_MSG = "Running {{'it' if parent['part'] else 'the higlighted expression'}} generated an error: `{{stu_str}}`."
 DEFAULT_ERROR_MSG_INV = "Running {{'it' if parent['part'] else 'the higlighted expression'}} didn't generate an error, but it should!"
 DEFAULT_UNDEFINED_NAME_MSG = "Running {{'it' if parent['part'] else 'the higlighted expression'}} should define a variable `{{name}}` without errors, but it doesn't."
 DEFAULT_INCORRECT_NAME_MSG = (
-    "Are you sure you assigned the correct value to `{{name}}`?"
+    "你确定为 `{{name}}`正确赋值了吗?"
 )
 DEFAULT_INCORRECT_EXPR_CODE_MSG = (
-    "Running the expression `{{expr_code}}` didn't generate the expected result."
+    "运行表达式 `{{expr_code}}` 没有产生预期的结果。"
 )
 
 args_string = """

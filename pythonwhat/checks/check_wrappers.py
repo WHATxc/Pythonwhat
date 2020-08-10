@@ -691,7 +691,7 @@ def rename_function(func, name):
 scts["has_equal_name"] = state_partial(
     has_equal_part,
     "name",
-    msg="Make sure to use the correct {{name}}, was expecting {{sol_part[name]}}, instead got {{stu_part[name]}}.",
+    msg="确保使用正确的 {{name}},期望的是 {{sol_part[name]}}, 而不是得到 {{stu_part[name]}}.",
 )
 scts["is_default"] = state_partial(
     has_equal_part,

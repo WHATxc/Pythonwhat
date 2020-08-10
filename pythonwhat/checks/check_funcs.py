@@ -53,9 +53,9 @@ def check_part(state, name, part_msg, missing_msg=None, expand_msg=None):
     """Return child state with name part as its ast tree"""
 
     if missing_msg is None:
-        missing_msg = "Are you sure you defined the {{part}}? "
+        missing_msg = "你确定你定义了 {{part}}吗? "
     if expand_msg is None:
-        expand_msg = "Did you correctly specify the {{part}}? "
+        expand_msg = "你是否正确指定了 {{part}}? "
 
     if not part_msg:
         part_msg = name
@@ -82,9 +82,9 @@ def check_part_index(state, name, index, part_msg, missing_msg=None, expand_msg=
     """
 
     if missing_msg is None:
-        missing_msg = "Are you sure you defined the {{part}}? "
+        missing_msg = "你确定你定义了 {{part}}吗? "
     if expand_msg is None:
-        expand_msg = "Did you correctly specify the {{part}}? "
+        expand_msg = "你是否正确指定了 {{part}}? "
 
     # create message
     ordinal = get_ord(index + 1) if isinstance(index, int) else ""
@@ -119,9 +119,9 @@ def check_node(
 ):
 
     if missing_msg is None:
-        missing_msg = "The system wants to check the {{typestr}} but hasn't found it."
+        missing_msg = "系统想要检查 {{typestr}} 但没有找到它."
     if expand_msg is None:
-        expand_msg = "Check the {{typestr}}. "
+        expand_msg = "检查 {{typestr}}. "
 
     stu_out = state.ast_dispatcher(name, state.student_ast)
     sol_out = state.ast_dispatcher(name, state.solution_ast)
@@ -259,14 +259,14 @@ def check_args(state, name, missing_msg=None):
 
     """
     if missing_msg is None:
-        missing_msg = "Did you specify the {{part}}?"
+        missing_msg = "你是否指定了 {{part}}?"
 
     if name in ["*args", "**kwargs"]:  # for check_function_def
         return check_part(state, name, name, missing_msg=missing_msg)
     else:
         if isinstance(name, list):  # dealing with args or kwargs
             if name[0] == "args":
-                arg_str = "{} argument passed as a variable length argument".format(
+                arg_str = "{} 参数作为可变长度参数传递".format(
                     get_ord(name[1] + 1)
                 )
             else:
@@ -333,7 +333,7 @@ def check_call(state, callstr, argstr=None, expand_msg=None):
     )
 
     if expand_msg is None:
-        expand_msg = "To verify it, we reran {{argstr}}. "
+        expand_msg = "为了验证它，我们重新运行 {{argstr}}. "
 
     stu_part, _argstr = build_call(callstr, state.student_parts["node"])
     sol_part, _ = build_call(callstr, state.solution_parts["node"])
